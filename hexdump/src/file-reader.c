@@ -103,9 +103,9 @@ void *fr_open(const char *file_name, void *fr_block) {
     }
     fr->filename = (char *)file_name;
     fr->file_handle = open(fr->filename, file_flags);
-    if (fr->file_handle == FHNotOpen) {
-        fr_free (fr);
-        return NULL;
+    if (!fr_isopen(fr)) {
+      fr_free (fr);
+      return NULL;
     }
     return (void *)fr;
 }
@@ -133,7 +133,7 @@ int fr_read(void *fr_block, uint8_t *buffer, const size_t len) {
 void fr_close(void *fr_block) {
     TSFileReader *fr = (TSFileReader *)fr_block;
     if (fr != NULL) {
-        if (fr->file_handle != FHNotOpen) {
+        if (fr_isopen(fr)) {
             close(fr->file_handle);
         }
         fr_free(fr_block);
