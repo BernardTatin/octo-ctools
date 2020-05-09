@@ -68,7 +68,7 @@ void *fr_alloc(void) {
     TSFileReader *fr =  (TSFileReader *)calloc(1, sizeof(TSFileReader));
     if (fr == NULL) {
         fprintf(stderr, "Cannot allocate memory!!!\n");
-        exit (FAILURE);
+        exit (ALLOC_FAILURE);
     }
     fr->rbuffer = rb_allocate(_FR_BUFFER_LEN);
     return fr;
@@ -123,8 +123,8 @@ int fr_read(void *fr_block, uint8_t *buffer, const size_t len) {
     fr->before_position = fr->position;
     real_len = rb_read(fr->rbuffer, buffer, len);
     if (real_len > 0) {
-		fr->position += (int64_t)real_len;
-	}
+      fr->position += (int64_t)real_len;
+    }
     return real_len;
 }
 /**

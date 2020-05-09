@@ -36,11 +36,11 @@
 extern char *hex_chars;
 
 static INLINE char normalize_byte(uint8_t c) {
-	if (c < 32 || c > 126) {
-		return '.';
-	} else {
-		return (char)c;
-	}
+  if (c < 32 || c > 126) {
+    return '.';
+  } else {
+    return (char)c;
+  }
 }
 
 
