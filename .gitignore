@@ -54,7 +54,14 @@ nbproject/
 *.komodoproject
 html/
 .vscode/
-cmake-build-debug/
+
+# cmake files
+cmake*/
+CMakeFiles*/
+cmake_install.cmake
+CMakeLists.txt
+CMakeCache.txt
+*.cbp
 
 # watcom
 *.err
