@@ -42,7 +42,7 @@
 #define FAILURE 1
 #endif
 
-#define ALLOC_FAILURE 2
+#define FAILURE_ALLOC 2
 
 #if !defined(__WATCOMC__)
 static inline size_t min(const size_t a, const size_t b) {

@@ -43,7 +43,7 @@ static INLINE TScl_element *cl_elt_new(void *value) {
   TScl_element *elt = (TScl_element *)calloc(1, sizeof(TScl_element));
   if (elt == NULL) {
     // fprintf(stderr, "Cannot allocate memory !!!\n");
-    exit(ALLOC_FAILURE);
+    exit(FAILURE_ALLOC);
   }
   elt->value = value;
   elt->next = NULL;

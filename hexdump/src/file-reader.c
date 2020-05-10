@@ -68,7 +68,7 @@ void *fr_alloc(void) {
     TSFileReader *fr =  (TSFileReader *)calloc(1, sizeof(TSFileReader));
     if (fr == NULL) {
         fprintf(stderr, "Cannot allocate memory!!!\n");
-        exit (ALLOC_FAILURE);
+        exit (FAILURE_ALLOC);
     }
     fr->rbuffer = rb_allocate(_FR_BUFFER_LEN);
     return fr;
