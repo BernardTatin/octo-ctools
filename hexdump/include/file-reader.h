@@ -43,6 +43,10 @@ void *fr_alloc(void);
  */
 void *fr_open(const char *file_name, void *fr_block);
 /**
+ * open a file-reader for stdin
+ */
+void *fr_open_stdin(void *fr_block);
+/**
  * read data
  */
 int fr_read(void *fr_block, uint8_t *buffer, size_t len);

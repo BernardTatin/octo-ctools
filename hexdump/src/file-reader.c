@@ -110,11 +110,31 @@ void *fr_open(const char *file_name, void *fr_block) {
     return (void *)fr;
 }
 /**
+ * open a file-reader for stdin
+ */
+void *fr_open_stdin(void *fr_block) {
+  TSFileReader *fr = (TSFileReader *)fr_block;
+  int file_flags = O_RDONLY;
+#if defined(__WATCOMC__)
+  file_flags |= O_BINARY;
+#endif
+  if (fr == NULL) {
+    fr = fr_alloc();
+  }
+  fr->filename = "<stdin>";
+  fr->file_handle = 1;
+  if (!fr_isopen(fr)) {
+    fr_free (fr);
+    return NULL;
+  }
+  return (void *)fr;
+}
+/**
  * read data
  */
 int fr_read(void *fr_block, uint8_t *buffer, const size_t len) {
     TSFileReader *fr = (TSFileReader *)fr_block;
-	int real_len;
+    int real_len;
 
     if (fr_isempty(fr)) {
         fr_fill_buffer(fr);
@@ -133,7 +153,7 @@ int fr_read(void *fr_block, uint8_t *buffer, const size_t len) {
 void fr_close(void *fr_block) {
     TSFileReader *fr = (TSFileReader *)fr_block;
     if (fr != NULL) {
-        if (fr_isopen(fr)) {
+        if (fr_isopen(fr) && fr->file_handle != 1) {
             close(fr->file_handle);
         }
         fr_free(fr_block);

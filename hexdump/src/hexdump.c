@@ -53,7 +53,12 @@ static void dohelp(const int exitCode) {
 
 
 static int hexdump(const char* fileName) {
-    void *fd = fr_open(fileName, NULL);
+    void *fd;
+    if (fileName != NULL) {
+      fd = fr_open(fileName, NULL);
+    } else {
+      fd = fr_open_stdin(NULL);
+    }
 
     if (fd != NULL) {
         ssize_t read_len;
@@ -102,15 +107,25 @@ static int hexdump(const char* fileName) {
 
 int main(int argn, char *argv[]) {
     int retCode = SUCCESS;
-
-    for (int i = 1; i < argn; i++) {
-        char *arg = argv[i];
-
-        if (strcmp(arg, "--help") == 0) {
-            dohelp(SUCCESS);
+    char *arg1 = argv[1];
+    switch (argn) {
+    case 1:
+      hexdump(NULL);
+      break;
+    case 2:
+        if (strcmp(arg1, "--help") == 0) {
+          dohelp(SUCCESS);
         } else {
-            hexdump(arg);
+          hexdump(arg1);
         }
+        break;
+      default:
+        for (int i = 1; i < argn; i++) {
+          char *arg = argv[i];
+
+          hexdump(arg);
+        }
+        break;
     }
     return retCode;
 }
