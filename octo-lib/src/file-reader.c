@@ -45,7 +45,7 @@
 
 #include "private-file-header.h"
 
-static  const stdin_no = 0;
+static  const int stdin_no = 0;
 
 static int fr_fill_buffer(TSFileReader *fr) {
     int r = read(fr->file_handle, rb_get_buffer(fr->rbuffer), _FR_BUFFER_LEN);

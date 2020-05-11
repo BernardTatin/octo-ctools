@@ -23,9 +23,6 @@ SUFFIXES =
 .SUFFIXES: .hpux_make_needs_suffix_list
 
 
-# Produce verbose output by default.
-VERBOSE = 1
-
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -127,17 +124,17 @@ hexdump.exe/fast:
 .PHONY : hexdump.exe/fast
 
 #=============================================================================
-# Target rules for targets named thelib
+# Target rules for targets named octo
 
 # Build rule for target.
-thelib: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 thelib
-.PHONY : thelib
+octo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 octo
+.PHONY : octo
 
 # fast build rule for target.
-thelib/fast:
-	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/build
-.PHONY : thelib/fast
+octo/fast:
+	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/build
+.PHONY : octo/fast
 
 hexdump/src/hexdump.o: hexdump/src/hexdump.c.o
 
@@ -193,86 +190,86 @@ hexdump/src/hexops.c.s:
 	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/hexdump/src/hexops.c.s
 .PHONY : hexdump/src/hexops.c.s
 
-lib/src/clist.o: lib/src/clist.c.o
+octo-lib/src/clist.o: octo-lib/src/clist.c.o
 
-.PHONY : lib/src/clist.o
-
-# target to build an object file
-lib/src/clist.c.o:
-	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/clist.c.o
-.PHONY : lib/src/clist.c.o
-
-lib/src/clist.i: lib/src/clist.c.i
-
-.PHONY : lib/src/clist.i
-
-# target to preprocess a source file
-lib/src/clist.c.i:
-	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/clist.c.i
-.PHONY : lib/src/clist.c.i
-
-lib/src/clist.s: lib/src/clist.c.s
-
-.PHONY : lib/src/clist.s
-
-# target to generate assembly for a file
-lib/src/clist.c.s:
-	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/clist.c.s
-.PHONY : lib/src/clist.c.s
-
-lib/src/file-reader.o: lib/src/file-reader.c.o
-
-.PHONY : lib/src/file-reader.o
+.PHONY : octo-lib/src/clist.o
 
 # target to build an object file
-lib/src/file-reader.c.o:
-	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/file-reader.c.o
-.PHONY : lib/src/file-reader.c.o
+octo-lib/src/clist.c.o:
+	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/clist.c.o
+.PHONY : octo-lib/src/clist.c.o
 
-lib/src/file-reader.i: lib/src/file-reader.c.i
+octo-lib/src/clist.i: octo-lib/src/clist.c.i
 
-.PHONY : lib/src/file-reader.i
+.PHONY : octo-lib/src/clist.i
 
 # target to preprocess a source file
-lib/src/file-reader.c.i:
-	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/file-reader.c.i
-.PHONY : lib/src/file-reader.c.i
+octo-lib/src/clist.c.i:
+	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/clist.c.i
+.PHONY : octo-lib/src/clist.c.i
 
-lib/src/file-reader.s: lib/src/file-reader.c.s
+octo-lib/src/clist.s: octo-lib/src/clist.c.s
 
-.PHONY : lib/src/file-reader.s
+.PHONY : octo-lib/src/clist.s
 
 # target to generate assembly for a file
-lib/src/file-reader.c.s:
-	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/file-reader.c.s
-.PHONY : lib/src/file-reader.c.s
+octo-lib/src/clist.c.s:
+	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/clist.c.s
+.PHONY : octo-lib/src/clist.c.s
 
-lib/src/rbuffer.o: lib/src/rbuffer.c.o
+octo-lib/src/file-reader.o: octo-lib/src/file-reader.c.o
 
-.PHONY : lib/src/rbuffer.o
+.PHONY : octo-lib/src/file-reader.o
 
 # target to build an object file
-lib/src/rbuffer.c.o:
-	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/rbuffer.c.o
-.PHONY : lib/src/rbuffer.c.o
+octo-lib/src/file-reader.c.o:
+	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/file-reader.c.o
+.PHONY : octo-lib/src/file-reader.c.o
 
-lib/src/rbuffer.i: lib/src/rbuffer.c.i
+octo-lib/src/file-reader.i: octo-lib/src/file-reader.c.i
 
-.PHONY : lib/src/rbuffer.i
+.PHONY : octo-lib/src/file-reader.i
 
 # target to preprocess a source file
-lib/src/rbuffer.c.i:
-	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/rbuffer.c.i
-.PHONY : lib/src/rbuffer.c.i
+octo-lib/src/file-reader.c.i:
+	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/file-reader.c.i
+.PHONY : octo-lib/src/file-reader.c.i
 
-lib/src/rbuffer.s: lib/src/rbuffer.c.s
+octo-lib/src/file-reader.s: octo-lib/src/file-reader.c.s
 
-.PHONY : lib/src/rbuffer.s
+.PHONY : octo-lib/src/file-reader.s
 
 # target to generate assembly for a file
-lib/src/rbuffer.c.s:
-	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/rbuffer.c.s
-.PHONY : lib/src/rbuffer.c.s
+octo-lib/src/file-reader.c.s:
+	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/file-reader.c.s
+.PHONY : octo-lib/src/file-reader.c.s
+
+octo-lib/src/rbuffer.o: octo-lib/src/rbuffer.c.o
+
+.PHONY : octo-lib/src/rbuffer.o
+
+# target to build an object file
+octo-lib/src/rbuffer.c.o:
+	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/rbuffer.c.o
+.PHONY : octo-lib/src/rbuffer.c.o
+
+octo-lib/src/rbuffer.i: octo-lib/src/rbuffer.c.i
+
+.PHONY : octo-lib/src/rbuffer.i
+
+# target to preprocess a source file
+octo-lib/src/rbuffer.c.i:
+	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/rbuffer.c.i
+.PHONY : octo-lib/src/rbuffer.c.i
+
+octo-lib/src/rbuffer.s: octo-lib/src/rbuffer.c.s
+
+.PHONY : octo-lib/src/rbuffer.s
+
+# target to generate assembly for a file
+octo-lib/src/rbuffer.c.s:
+	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/rbuffer.c.s
+.PHONY : octo-lib/src/rbuffer.c.s
 
 # Help Target
 help:
@@ -281,24 +278,24 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... hexdump.exe"
-	@echo "... thelib"
+	@echo "... edit_cache"
+	@echo "... octo"
 	@echo "... hexdump/src/hexdump.o"
 	@echo "... hexdump/src/hexdump.i"
 	@echo "... hexdump/src/hexdump.s"
 	@echo "... hexdump/src/hexops.o"
 	@echo "... hexdump/src/hexops.i"
 	@echo "... hexdump/src/hexops.s"
-	@echo "... lib/src/clist.o"
-	@echo "... lib/src/clist.i"
-	@echo "... lib/src/clist.s"
-	@echo "... lib/src/file-reader.o"
-	@echo "... lib/src/file-reader.i"
-	@echo "... lib/src/file-reader.s"
-	@echo "... lib/src/rbuffer.o"
-	@echo "... lib/src/rbuffer.i"
-	@echo "... lib/src/rbuffer.s"
+	@echo "... octo-lib/src/clist.o"
+	@echo "... octo-lib/src/clist.i"
+	@echo "... octo-lib/src/clist.s"
+	@echo "... octo-lib/src/file-reader.o"
+	@echo "... octo-lib/src/file-reader.i"
+	@echo "... octo-lib/src/file-reader.s"
+	@echo "... octo-lib/src/rbuffer.o"
+	@echo "... octo-lib/src/rbuffer.i"
+	@echo "... octo-lib/src/rbuffer.s"
 .PHONY : help
 
 
