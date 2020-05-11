@@ -7,3 +7,6 @@ mkdir ${BUILD_DIR}
 cmake -S . -B build || echo "cmake init failure"
 cd ${BUILD_DIR}
 cmake --build . || echo "cmake build failure"
+
+# test stdin with pipes
+cat ../LICENSE | ./hexdump.exe
