@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(new_ctools C)
+project(octo_ctools C)
 
 set(CMAKE_C_STANDARD 11)
 
