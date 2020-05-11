@@ -45,6 +45,8 @@
 
 #include "private-file-header.h"
 
+static  const stdin_no = 0;
+
 static int fr_fill_buffer(TSFileReader *fr) {
     int r = read(fr->file_handle, rb_get_buffer(fr->rbuffer), _FR_BUFFER_LEN);
     if (r < 0) {
@@ -119,7 +121,7 @@ void *fr_open_stdin(void *fr_block) {
     fr = fr_alloc();
   }
   fr->filename = "<stdin>";
-  fr->file_handle = 1;
+  fr->file_handle = stdin_no;
   if (!fr_isopen(fr)) {
     fr_free (fr);
     return NULL;
@@ -150,7 +152,7 @@ int fr_read(void *fr_block, uint8_t *buffer, const size_t len) {
 void fr_close(void *fr_block) {
     TSFileReader *fr = (TSFileReader *)fr_block;
     if (fr != NULL) {
-        if (fr_isopen(fr) && fr->file_handle != 1) {
+        if (fr_isopen(fr) && fr->file_handle != stdin_no) {
             close(fr->file_handle);
         }
         fr_free(fr_block);
