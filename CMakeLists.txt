@@ -6,12 +6,7 @@ set(CMAKE_C_STANDARD 11)
 include_directories(hexdump/include
         octo-lib/include)
 
-add_library(octo STATIC
-        octo-lib/include/file-reader.h
-        octo-lib/include/private-file-header.h
-        octo-lib/src/file-reader.c
-        octo-lib/src/clist.c
-        octo-lib/src/rbuffer.c)
+add_subdirectory(octo-lib)
 
 add_executable(hexdump.exe
         hexdump/include/hexops.h

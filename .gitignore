@@ -59,7 +59,7 @@ html/
 cmake*/
 CMakeFiles*/
 cmake_install.cmake
-CMakeLists.txt
+!CMakeLists.txt
 CMakeCache.txt
 *.cbp
 

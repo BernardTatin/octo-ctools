@@ -133,7 +133,7 @@ octo: cmake_check_build_system
 
 # fast build rule for target.
 octo/fast:
-	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/build
+	$(MAKE) -f octo-lib/CMakeFiles/octo.dir/build.make octo-lib/CMakeFiles/octo.dir/build
 .PHONY : octo/fast
 
 hexdump/src/hexdump.o: hexdump/src/hexdump.c.o
@@ -190,87 +190,6 @@ hexdump/src/hexops.c.s:
 	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/hexdump/src/hexops.c.s
 .PHONY : hexdump/src/hexops.c.s
 
-octo-lib/src/clist.o: octo-lib/src/clist.c.o
-
-.PHONY : octo-lib/src/clist.o
-
-# target to build an object file
-octo-lib/src/clist.c.o:
-	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/clist.c.o
-.PHONY : octo-lib/src/clist.c.o
-
-octo-lib/src/clist.i: octo-lib/src/clist.c.i
-
-.PHONY : octo-lib/src/clist.i
-
-# target to preprocess a source file
-octo-lib/src/clist.c.i:
-	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/clist.c.i
-.PHONY : octo-lib/src/clist.c.i
-
-octo-lib/src/clist.s: octo-lib/src/clist.c.s
-
-.PHONY : octo-lib/src/clist.s
-
-# target to generate assembly for a file
-octo-lib/src/clist.c.s:
-	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/clist.c.s
-.PHONY : octo-lib/src/clist.c.s
-
-octo-lib/src/file-reader.o: octo-lib/src/file-reader.c.o
-
-.PHONY : octo-lib/src/file-reader.o
-
-# target to build an object file
-octo-lib/src/file-reader.c.o:
-	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/file-reader.c.o
-.PHONY : octo-lib/src/file-reader.c.o
-
-octo-lib/src/file-reader.i: octo-lib/src/file-reader.c.i
-
-.PHONY : octo-lib/src/file-reader.i
-
-# target to preprocess a source file
-octo-lib/src/file-reader.c.i:
-	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/file-reader.c.i
-.PHONY : octo-lib/src/file-reader.c.i
-
-octo-lib/src/file-reader.s: octo-lib/src/file-reader.c.s
-
-.PHONY : octo-lib/src/file-reader.s
-
-# target to generate assembly for a file
-octo-lib/src/file-reader.c.s:
-	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/file-reader.c.s
-.PHONY : octo-lib/src/file-reader.c.s
-
-octo-lib/src/rbuffer.o: octo-lib/src/rbuffer.c.o
-
-.PHONY : octo-lib/src/rbuffer.o
-
-# target to build an object file
-octo-lib/src/rbuffer.c.o:
-	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/rbuffer.c.o
-.PHONY : octo-lib/src/rbuffer.c.o
-
-octo-lib/src/rbuffer.i: octo-lib/src/rbuffer.c.i
-
-.PHONY : octo-lib/src/rbuffer.i
-
-# target to preprocess a source file
-octo-lib/src/rbuffer.c.i:
-	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/rbuffer.c.i
-.PHONY : octo-lib/src/rbuffer.c.i
-
-octo-lib/src/rbuffer.s: octo-lib/src/rbuffer.c.s
-
-.PHONY : octo-lib/src/rbuffer.s
-
-# target to generate assembly for a file
-octo-lib/src/rbuffer.c.s:
-	$(MAKE) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/octo-lib/src/rbuffer.c.s
-.PHONY : octo-lib/src/rbuffer.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -278,8 +197,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... hexdump.exe"
 	@echo "... edit_cache"
+	@echo "... hexdump.exe"
 	@echo "... octo"
 	@echo "... hexdump/src/hexdump.o"
 	@echo "... hexdump/src/hexdump.i"
@@ -287,15 +206,6 @@ help:
 	@echo "... hexdump/src/hexops.o"
 	@echo "... hexdump/src/hexops.i"
 	@echo "... hexdump/src/hexops.s"
-	@echo "... octo-lib/src/clist.o"
-	@echo "... octo-lib/src/clist.i"
-	@echo "... octo-lib/src/clist.s"
-	@echo "... octo-lib/src/file-reader.o"
-	@echo "... octo-lib/src/file-reader.i"
-	@echo "... octo-lib/src/file-reader.s"
-	@echo "... octo-lib/src/rbuffer.o"
-	@echo "... octo-lib/src/rbuffer.i"
-	@echo "... octo-lib/src/rbuffer.s"
 .PHONY : help
 
 
