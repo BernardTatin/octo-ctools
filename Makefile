@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named hexdump.exe
-
-# Build rule for target.
-hexdump.exe: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hexdump.exe
-.PHONY : hexdump.exe
-
-# fast build rule for target.
-hexdump.exe/fast:
-	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/build
-.PHONY : hexdump.exe/fast
-
-#=============================================================================
 # Target rules for targets named octo
 
 # Build rule for target.
@@ -136,59 +123,18 @@ octo/fast:
 	$(MAKE) -f octo-lib/CMakeFiles/octo.dir/build.make octo-lib/CMakeFiles/octo.dir/build
 .PHONY : octo/fast
 
-hexdump/src/hexdump.o: hexdump/src/hexdump.c.o
+#=============================================================================
+# Target rules for targets named hexdump.exe
 
-.PHONY : hexdump/src/hexdump.o
+# Build rule for target.
+hexdump.exe: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hexdump.exe
+.PHONY : hexdump.exe
 
-# target to build an object file
-hexdump/src/hexdump.c.o:
-	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/hexdump/src/hexdump.c.o
-.PHONY : hexdump/src/hexdump.c.o
-
-hexdump/src/hexdump.i: hexdump/src/hexdump.c.i
-
-.PHONY : hexdump/src/hexdump.i
-
-# target to preprocess a source file
-hexdump/src/hexdump.c.i:
-	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/hexdump/src/hexdump.c.i
-.PHONY : hexdump/src/hexdump.c.i
-
-hexdump/src/hexdump.s: hexdump/src/hexdump.c.s
-
-.PHONY : hexdump/src/hexdump.s
-
-# target to generate assembly for a file
-hexdump/src/hexdump.c.s:
-	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/hexdump/src/hexdump.c.s
-.PHONY : hexdump/src/hexdump.c.s
-
-hexdump/src/hexops.o: hexdump/src/hexops.c.o
-
-.PHONY : hexdump/src/hexops.o
-
-# target to build an object file
-hexdump/src/hexops.c.o:
-	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/hexdump/src/hexops.c.o
-.PHONY : hexdump/src/hexops.c.o
-
-hexdump/src/hexops.i: hexdump/src/hexops.c.i
-
-.PHONY : hexdump/src/hexops.i
-
-# target to preprocess a source file
-hexdump/src/hexops.c.i:
-	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/hexdump/src/hexops.c.i
-.PHONY : hexdump/src/hexops.c.i
-
-hexdump/src/hexops.s: hexdump/src/hexops.c.s
-
-.PHONY : hexdump/src/hexops.s
-
-# target to generate assembly for a file
-hexdump/src/hexops.c.s:
-	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/hexdump/src/hexops.c.s
-.PHONY : hexdump/src/hexops.c.s
+# fast build rule for target.
+hexdump.exe/fast:
+	$(MAKE) -f hexdump/CMakeFiles/hexdump.exe.dir/build.make hexdump/CMakeFiles/hexdump.exe.dir/build
+.PHONY : hexdump.exe/fast
 
 # Help Target
 help:
@@ -198,14 +144,8 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... hexdump.exe"
 	@echo "... octo"
-	@echo "... hexdump/src/hexdump.o"
-	@echo "... hexdump/src/hexdump.i"
-	@echo "... hexdump/src/hexdump.s"
-	@echo "... hexdump/src/hexops.o"
-	@echo "... hexdump/src/hexops.i"
-	@echo "... hexdump/src/hexops.s"
+	@echo "... hexdump.exe"
 .PHONY : help
 
 
