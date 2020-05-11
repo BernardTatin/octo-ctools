@@ -114,10 +114,7 @@ void *fr_open(const char *file_name, void *fr_block) {
  */
 void *fr_open_stdin(void *fr_block) {
   TSFileReader *fr = (TSFileReader *)fr_block;
-  int file_flags = O_RDONLY;
-#if defined(__WATCOMC__)
-  file_flags |= O_BINARY;
-#endif
+
   if (fr == NULL) {
     fr = fr_alloc();
   }

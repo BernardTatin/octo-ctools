@@ -23,6 +23,9 @@ SUFFIXES =
 .SUFFIXES: .hpux_make_needs_suffix_list
 
 
+# Produce verbose output by default.
+VERBOSE = 1
+
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -39,10 +42,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /usr/local/clion/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E remove -f
+RM = /usr/local/clion/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +62,7 @@ CMAKE_BINARY_DIR = /home/bernard/git/new-ctools
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/clion/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -69,8 +72,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/local/clion/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -122,6 +125,19 @@ hexdump.exe: cmake_check_build_system
 hexdump.exe/fast:
 	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/build
 .PHONY : hexdump.exe/fast
+
+#=============================================================================
+# Target rules for targets named thelib
+
+# Build rule for target.
+thelib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 thelib
+.PHONY : thelib
+
+# fast build rule for target.
+thelib/fast:
+	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/build
+.PHONY : thelib/fast
 
 hexdump/src/file-reader.o: hexdump/src/file-reader.c.o
 
@@ -210,7 +226,7 @@ lib/src/clist.o: lib/src/clist.c.o
 
 # target to build an object file
 lib/src/clist.c.o:
-	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/lib/src/clist.c.o
+	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/clist.c.o
 .PHONY : lib/src/clist.c.o
 
 lib/src/clist.i: lib/src/clist.c.i
@@ -219,7 +235,7 @@ lib/src/clist.i: lib/src/clist.c.i
 
 # target to preprocess a source file
 lib/src/clist.c.i:
-	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/lib/src/clist.c.i
+	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/clist.c.i
 .PHONY : lib/src/clist.c.i
 
 lib/src/clist.s: lib/src/clist.c.s
@@ -228,7 +244,7 @@ lib/src/clist.s: lib/src/clist.c.s
 
 # target to generate assembly for a file
 lib/src/clist.c.s:
-	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/lib/src/clist.c.s
+	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/clist.c.s
 .PHONY : lib/src/clist.c.s
 
 lib/src/rbuffer.o: lib/src/rbuffer.c.o
@@ -237,7 +253,7 @@ lib/src/rbuffer.o: lib/src/rbuffer.c.o
 
 # target to build an object file
 lib/src/rbuffer.c.o:
-	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/lib/src/rbuffer.c.o
+	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/rbuffer.c.o
 .PHONY : lib/src/rbuffer.c.o
 
 lib/src/rbuffer.i: lib/src/rbuffer.c.i
@@ -246,7 +262,7 @@ lib/src/rbuffer.i: lib/src/rbuffer.c.i
 
 # target to preprocess a source file
 lib/src/rbuffer.c.i:
-	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/lib/src/rbuffer.c.i
+	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/rbuffer.c.i
 .PHONY : lib/src/rbuffer.c.i
 
 lib/src/rbuffer.s: lib/src/rbuffer.c.s
@@ -255,7 +271,7 @@ lib/src/rbuffer.s: lib/src/rbuffer.c.s
 
 # target to generate assembly for a file
 lib/src/rbuffer.c.s:
-	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/lib/src/rbuffer.c.s
+	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/rbuffer.c.s
 .PHONY : lib/src/rbuffer.c.s
 
 # Help Target
@@ -267,6 +283,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... hexdump.exe"
+	@echo "... thelib"
 	@echo "... hexdump/src/file-reader.o"
 	@echo "... hexdump/src/file-reader.i"
 	@echo "... hexdump/src/file-reader.s"
