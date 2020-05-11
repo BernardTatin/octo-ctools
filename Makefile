@@ -139,33 +139,6 @@ thelib/fast:
 	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/build
 .PHONY : thelib/fast
 
-hexdump/src/file-reader.o: hexdump/src/file-reader.c.o
-
-.PHONY : hexdump/src/file-reader.o
-
-# target to build an object file
-hexdump/src/file-reader.c.o:
-	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/hexdump/src/file-reader.c.o
-.PHONY : hexdump/src/file-reader.c.o
-
-hexdump/src/file-reader.i: hexdump/src/file-reader.c.i
-
-.PHONY : hexdump/src/file-reader.i
-
-# target to preprocess a source file
-hexdump/src/file-reader.c.i:
-	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/hexdump/src/file-reader.c.i
-.PHONY : hexdump/src/file-reader.c.i
-
-hexdump/src/file-reader.s: hexdump/src/file-reader.c.s
-
-.PHONY : hexdump/src/file-reader.s
-
-# target to generate assembly for a file
-hexdump/src/file-reader.c.s:
-	$(MAKE) -f CMakeFiles/hexdump.exe.dir/build.make CMakeFiles/hexdump.exe.dir/hexdump/src/file-reader.c.s
-.PHONY : hexdump/src/file-reader.c.s
-
 hexdump/src/hexdump.o: hexdump/src/hexdump.c.o
 
 .PHONY : hexdump/src/hexdump.o
@@ -247,6 +220,33 @@ lib/src/clist.c.s:
 	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/clist.c.s
 .PHONY : lib/src/clist.c.s
 
+lib/src/file-reader.o: lib/src/file-reader.c.o
+
+.PHONY : lib/src/file-reader.o
+
+# target to build an object file
+lib/src/file-reader.c.o:
+	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/file-reader.c.o
+.PHONY : lib/src/file-reader.c.o
+
+lib/src/file-reader.i: lib/src/file-reader.c.i
+
+.PHONY : lib/src/file-reader.i
+
+# target to preprocess a source file
+lib/src/file-reader.c.i:
+	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/file-reader.c.i
+.PHONY : lib/src/file-reader.c.i
+
+lib/src/file-reader.s: lib/src/file-reader.c.s
+
+.PHONY : lib/src/file-reader.s
+
+# target to generate assembly for a file
+lib/src/file-reader.c.s:
+	$(MAKE) -f CMakeFiles/thelib.dir/build.make CMakeFiles/thelib.dir/lib/src/file-reader.c.s
+.PHONY : lib/src/file-reader.c.s
+
 lib/src/rbuffer.o: lib/src/rbuffer.c.o
 
 .PHONY : lib/src/rbuffer.o
@@ -284,9 +284,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... hexdump.exe"
 	@echo "... thelib"
-	@echo "... hexdump/src/file-reader.o"
-	@echo "... hexdump/src/file-reader.i"
-	@echo "... hexdump/src/file-reader.s"
 	@echo "... hexdump/src/hexdump.o"
 	@echo "... hexdump/src/hexdump.i"
 	@echo "... hexdump/src/hexdump.s"
@@ -296,6 +293,9 @@ help:
 	@echo "... lib/src/clist.o"
 	@echo "... lib/src/clist.i"
 	@echo "... lib/src/clist.s"
+	@echo "... lib/src/file-reader.o"
+	@echo "... lib/src/file-reader.i"
+	@echo "... lib/src/file-reader.s"
 	@echo "... lib/src/rbuffer.o"
 	@echo "... lib/src/rbuffer.i"
 	@echo "... lib/src/rbuffer.s"
