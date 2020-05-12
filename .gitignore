@@ -95,8 +95,6 @@ dist/
 # Latex
 
 *.aux
-*.log
-*.out
 *.toc
 *-converted-to.pdf
 *.bbl
@@ -111,11 +109,8 @@ diamondrule.pdf
 main.pdf
 
 tags
-build/
 
 # backup files
-*~
-.*.swp
 
 # archives
 *.gz
