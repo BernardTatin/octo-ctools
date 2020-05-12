@@ -206,6 +206,33 @@ src/rbuffer.c.s:
 	cd /home/bernard/git/new-ctools && $(MAKE) -f octo-lib/CMakeFiles/octo.dir/build.make octo-lib/CMakeFiles/octo.dir/src/rbuffer.c.s
 .PHONY : src/rbuffer.c.s
 
+src/version.o: src/version.c.o
+
+.PHONY : src/version.o
+
+# target to build an object file
+src/version.c.o:
+	cd /home/bernard/git/new-ctools && $(MAKE) -f octo-lib/CMakeFiles/octo.dir/build.make octo-lib/CMakeFiles/octo.dir/src/version.c.o
+.PHONY : src/version.c.o
+
+src/version.i: src/version.c.i
+
+.PHONY : src/version.i
+
+# target to preprocess a source file
+src/version.c.i:
+	cd /home/bernard/git/new-ctools && $(MAKE) -f octo-lib/CMakeFiles/octo.dir/build.make octo-lib/CMakeFiles/octo.dir/src/version.c.i
+.PHONY : src/version.c.i
+
+src/version.s: src/version.c.s
+
+.PHONY : src/version.s
+
+# target to generate assembly for a file
+src/version.c.s:
+	cd /home/bernard/git/new-ctools && $(MAKE) -f octo-lib/CMakeFiles/octo.dir/build.make octo-lib/CMakeFiles/octo.dir/src/version.c.s
+.PHONY : src/version.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -224,6 +251,9 @@ help:
 	@echo "... src/rbuffer.o"
 	@echo "... src/rbuffer.i"
 	@echo "... src/rbuffer.s"
+	@echo "... src/version.o"
+	@echo "... src/version.i"
+	@echo "... src/version.s"
 .PHONY : help
 
 

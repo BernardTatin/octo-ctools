@@ -128,3 +128,4 @@ build/
 *.*_latexmk
 *.run.xml
 compile_commands.json
+octo-ctools-config.h

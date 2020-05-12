@@ -36,6 +36,7 @@
 #include <sys/types.h>
 
 #include "basedef.h"
+#include "version.h"
 #include "file-reader.h"
 #include "hexops.h"
 
@@ -47,8 +48,9 @@ static uint8_t buffer[HLEN];
 static char line[LLEN];
 
 static void dohelp(const int exitCode) {
-    fprintf(stdout, "dohelp\n");
-    exit(exitCode);
+  fprintf(stdout, "hexdump from %s\n", get_version());
+  fprintf(stdout, "dohelp\n");
+  exit(exitCode);
 }
 
 
