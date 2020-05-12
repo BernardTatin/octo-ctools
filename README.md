@@ -14,5 +14,9 @@ mkdir "build"
 cd build
 cmake ..
 cmake --build . --target hexdump.exe
-./hexdump.exe ../LICENSE
+./hexdump/hexdump.exe ../LICENSE
+cat ../LICENSE | ./hexdump/hexdump.exe
 ```
+
+The 2 last lines must give the same result. The last line test input from `stdin`. You can also run the shell script
+ `build-all.sh` from the command line.
