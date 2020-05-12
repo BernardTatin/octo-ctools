@@ -1,7 +1,7 @@
-/* 
+/*
  * File:   rbuffer.h
  * Author: bernard
- * 
+ *
  * Created on 25 avril 2016, 00:36
  */
 /*
@@ -36,7 +36,7 @@ typedef struct _RBuffer {
 	uint8_t *buffer;
 	int ptr_out;
 	int count;
-	size_t size;
+	size_t size;  // assigned but never used
 } TSRBuffer;
 
 void *rb_allocate(const size_t buffer_size);

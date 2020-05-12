@@ -27,8 +27,12 @@ char *get_version(void) {
       exit (FAILURE_ALLOC);
     }
     atexit(free_version);
-    sprintf(version_buffer, "octo-tools %d.%d.%d", octo_ctools_VERSION_MAJOR,
-            octo_ctools_VERSION_MINOR, octo_ctools_VERSION_PATCH);
+    snprintf(version_buffer,
+             version_name_len - 1,
+             "octo-tools %d.%d.%d",
+             octo_ctools_VERSION_MAJOR,
+             octo_ctools_VERSION_MINOR,
+             octo_ctools_VERSION_PATCH);
   }
   return version_buffer;
 }

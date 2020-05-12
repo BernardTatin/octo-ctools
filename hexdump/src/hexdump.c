@@ -70,7 +70,9 @@ static int hexdump(const char* fileName) {
             uint8_t *old_src = src;
             int imax = min(HLEN, rest);
 
-            dst += sprintf(dst, "%08lx  ", fr_before_position(fd));
+            dst += snprintf(dst,
+                            LLEN - 1,
+                            "%08lx  ", fr_before_position(fd));
             for (int i = 0; i < imax; i++) {
                 dst = put_hex_byte(dst, *(src++));
                 if (i == 7) {

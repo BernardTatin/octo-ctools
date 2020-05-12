@@ -41,6 +41,7 @@ int rb_read(void *vrb, void *buffer, const size_t len) {
         memmove(buffer, rbuffer->buffer + rbuffer->ptr_out, real_len);
         rbuffer->ptr_out += real_len;
     }
+    // TODO: size_t may not fit in int
     return real_len;
 }
 
