@@ -13,7 +13,7 @@ project(octo_ctools
 set(CMAKE_C_STANDARD 11)
 
 #
-set(CMAKE_VERBOSE_MAKEFILE TRUE)
+# set(CMAKE_VERBOSE_MAKEFILE TRUE)
 
 # the library
 add_subdirectory(octo-lib)

@@ -31,7 +31,6 @@
  */
 
 #include "compat.h"
-#include <stdlib.h>
 
 #include "basedef.h"
 #include "clist.h"

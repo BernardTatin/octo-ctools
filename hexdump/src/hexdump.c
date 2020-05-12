@@ -32,8 +32,6 @@
 
 #include "compat.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
 
 #include "basedef.h"
 #include "version.h"

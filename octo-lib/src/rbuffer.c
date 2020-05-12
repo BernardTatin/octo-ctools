@@ -30,10 +30,6 @@
  */
 
 #include "compat.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <time.h>
-
 #include "rbuffer.h"
 #include "basedef.h"
 
