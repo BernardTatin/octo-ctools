@@ -9,4 +9,4 @@ cd ${BUILD_DIR}
 cmake --build . || echo "cmake build failure"
 
 # test stdin with pipes
-cat ../LICENSE | ./hexdump.exe
+cat ../LICENSE | ./hexdump/hexdump.exe
