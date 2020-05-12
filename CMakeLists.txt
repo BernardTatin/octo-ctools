@@ -9,10 +9,11 @@ project(octo_ctools
         DESCRIPTION "Some tools for C development and experimentation"
         HOMEPAGE_URL https://github.com/BernardTatin/octo-ctools
         LANGUAGES C)
-# managing project configuration
-configure_file(octo-ctools-config.h.in octo-ctools-config.h)
 
 set(CMAKE_C_STANDARD 11)
+
+#
+set(CMAKE_VERBOSE_MAKEFILE TRUE)
 
 # the library
 add_subdirectory(octo-lib)

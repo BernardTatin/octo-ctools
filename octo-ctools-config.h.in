@@ -1,8 +1,0 @@
-/*
- * octo-ctools-config.h.in
- */
-
-// the configured options and settings for octo_ctools
-#define octo_ctools_VERSION_MAJOR @octo_ctools_VERSION_MAJOR@
-#define octo_ctools_VERSION_MINOR @octo_ctools_VERSION_MINOR@
-#define octo_ctools_VERSION_PATCH @octo_ctools_VERSION_PATCH@

@@ -10,5 +10,6 @@ add_executable(hexdump.exe
 target_include_directories(hexdump.exe PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>  # <prefix>/include
+        "${PROJECT_BINARY_DIR}"
         )
 target_link_libraries(hexdump.exe octo)

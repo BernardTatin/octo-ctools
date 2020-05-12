@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 #include "basedef.h"
-#include "../../octo-ctools-config.h"
+#include "octo-ctools-config.h"
 #include "version.h"
 
 static const int version_name_len = 256;
