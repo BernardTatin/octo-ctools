@@ -33,6 +33,7 @@
 #ifndef BASEDEF_H
 #define BASEDEF_H
 
+#include "../../octo-ctools-config.h"
 
 #if !defined(SUCCESS)
 #define SUCCESS 0
