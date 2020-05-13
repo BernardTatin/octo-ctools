@@ -1,7 +1,12 @@
 cmake_minimum_required(VERSION 3.16)
+list(APPEND CMAKE_MODULE_PATH "$ENV{INC_DIR}")
+message("octo-lib INC_DIR: $ENV{INC_DIR}")
+message("octo-lib CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}")
+include(mainconfig)
+
 # project description
 project(octo_ctools
-        VERSION 0.1.0
+        VERSION ${OCTO_VERSION}
         DESCRIPTION "Some tools for C development and experimentation"
         HOMEPAGE_URL https://github.com/BernardTatin/octo-ctools
         LANGUAGES C)
