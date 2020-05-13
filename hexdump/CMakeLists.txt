@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
-project(octo_ctools C)
 
-set(CMAKE_C_STANDARD 11)
+list(APPEND CMAKE_MODULE_PATH "$ENV{INC_DIR}")
+include(mainconfig)
 
 add_executable(hexdump.exe
         include/hexops.h
