@@ -1,9 +1,11 @@
-/* 
+/*
  * File:   hexops.h
  * Author: bernard
  *
  * Created on 23 avril 2016, 21:18
  */
+// TODO: replace "<bernard dot tatin at outlook dot org>" with "<bernard dot
+//  tatin at outlook dot fr>"
 /*
     The MIT License (MIT)
 
