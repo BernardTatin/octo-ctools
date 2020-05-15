@@ -38,7 +38,7 @@
 TScl_list *cl_list_new(void) {
     TScl_list *list = (TScl_list *)calloc(1, sizeof(TScl_list));
     if (list == NULL) {
-        // fprintf(stderr, "Cannot allocate memory !!!\n");
+        on_error(ERR_ALLOC, "clist allocation failure");
         exit(FAILURE_ALLOC);
     }
     return list;

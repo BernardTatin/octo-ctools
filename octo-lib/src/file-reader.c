@@ -39,9 +39,10 @@
 #include "rbuffer.h"
 #include "file-reader.h"
 
+#include "private-file.h"
 #include "private-file-header.h"
+#include "on-error.h"
 
-static  const int stdin_no = 0;
 
 static int fr_fill_buffer(TSFileReader *fr) {
     int r = read(fr->file_handle, rb_get_buffer(fr->rbuffer), _FR_BUFFER_LEN);
@@ -65,7 +66,7 @@ static void fr_free(void *vfr) {
 void *fr_alloc(void) {
     TSFileReader *fr =  (TSFileReader *)calloc(1, sizeof(TSFileReader));
     if (fr == NULL) {
-        fprintf(stderr, "Cannot allocate memory!!!\n");
+        on_error(ERR_ALLOC, "fr_alloc failed\n");
         exit (FAILURE_ALLOC);
     }
     fr->rbuffer = rb_allocate(_FR_BUFFER_LEN);

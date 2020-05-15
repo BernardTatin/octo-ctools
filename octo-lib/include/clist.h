@@ -33,6 +33,8 @@
 #ifndef CLIST_H
 #define	CLIST_H
 
+#include "on-error.h"
+
 typedef struct _TScl_element {
   void *value;
 
@@ -42,7 +44,7 @@ typedef struct _TScl_element {
 static INLINE TScl_element *cl_elt_new(void *value) {
   TScl_element *elt = (TScl_element *)calloc(1, sizeof(TScl_element));
   if (elt == NULL) {
-    // fprintf(stderr, "Cannot allocate memory !!!\n");
+    on_error(ERR_ALLOC, "clist element allocation");
     exit(FAILURE_ALLOC);
   }
   elt->value = value;

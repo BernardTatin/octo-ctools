@@ -32,6 +32,7 @@
 #include "compat.h"
 #include "rbuffer.h"
 #include "basedef.h"
+#include "on-error.h"
 
 int rb_read(void *vrb, void *buffer, const size_t len) {
     TSRBuffer *rbuffer = (TSRBuffer *)vrb;
@@ -49,15 +50,15 @@ void *rb_allocate(const size_t buffer_size) {
     TSRBuffer *rb = (TSRBuffer *) calloc(1, sizeof (TSRBuffer));
 
     if (rb == NULL) {
-        // fprintf(stderr, "Cannot allocate memory !!!\n");
-        exit(FAILURE_ALLOC);
+      on_error(ERR_ALLOC, "TSRBuffer allocation failure");
+      exit(FAILURE_ALLOC);
     }
     rb->size = buffer_size;
     rb->buffer = (uint8_t *) calloc(1, buffer_size);
     if (rb->buffer == NULL) {
-        free(rb);
-        // fprintf(stderr, "Cannot allocate memory !!!\n");
-        exit(FAILURE_ALLOC);
+      free(rb);
+      on_error(ERR_ALLOC, "TSRBuffer data allocation failure");
+      exit(FAILURE_ALLOC);
     }
     return (void *) rb;
 }

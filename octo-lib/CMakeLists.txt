@@ -12,7 +12,7 @@ add_library(octo STATIC
         src/file-reader.c
         src/clist.c
         src/rbuffer.c
-        src/version.c)
+        src/version.c include/private-file.h src/private-file.c src/on-error.c include/on-error.h)
 target_include_directories(octo PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>  # <prefix>/include

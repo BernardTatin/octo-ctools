@@ -8,6 +8,7 @@
 #include "basedef.h"
 #include "octo-ctools-config.h"
 #include "version.h"
+#include "on-error.h"
 
 static const int version_name_len = 256;
 static char *version_buffer = NULL;
@@ -24,6 +25,7 @@ char *get_version(void) {
   if (version_buffer == NULL) {
     version_buffer = (char *)malloc(version_name_len);
     if (version_buffer == NULL) {
+      on_error(ERR_ALLOC, "Version name allocation error");
       exit (FAILURE_ALLOC);
     }
     atexit(free_version);
